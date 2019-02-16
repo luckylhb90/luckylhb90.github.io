@@ -69,7 +69,7 @@ windows 版本 ：  参考官方文档安装即可：
     "datePublished": "2019-02-16 22:15:36 &#43;0800 CST",
     "dateModified" : "2019-02-16 22:15:36 &#43;0800 CST",
     "url" : "https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/",
-    "wordCount" : "126",
+    "wordCount" : "151",
     "keywords" : [ "hugo", "luckylhb90"]
 }
 </script>
@@ -306,6 +306,14 @@ git clone --recursive https://github.com/spf13/hugoThemes themes
 cp themes\XXXX\exampleSite\config.toml .\
 hugo
 hugo server
+
+cd public
+-- github 新建一个空项目
+git init
+git add .
+git commit -m &quot;first commit&quot;
+git remote add origin https://github.com/xxxxx/xxxxxx.git
+git push -u origin master
 
 </code></pre>
 
