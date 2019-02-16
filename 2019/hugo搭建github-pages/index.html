@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="luckylhb90">
+  
+  
+  
+  <link rel="prev" href="https://luckylhb90.github.io/2019/welcome/" />
+  
+  <link rel="canonical" href="https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           hugo 搭建github page | luckylhb90
+       
+  </title>
+  <meta name="title" content="hugo 搭建github page | luckylhb90">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://luckylhb90.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "hugo 搭建github page",
+    "headline" : "hugo 搭建github page",
+    "description" : "hugo 搭建github page &emsp;&emsp;最近心血来潮，突然想继续写写博客，提高下写作文的水平（上学期间，作文就没写够过800字，尴尬啊）。
+&emsp;&emsp;然后最近就研究了下github page，google下，发现比较流行的三个静态页面生成框架，jekyll hexo hugo。 简单做了下对比：
+   框架 语言 性能 模板 搭建成本     jekyll ruby 慢 够用 较简单   hexo nodejs 比较快 够用 麻烦   hugo go 快 够用 简单    &emsp;&emsp;看了实现语言，自己目前多少了解一些go语法，其他两种语言个人了解不多，还有性能方面，看了大部分人的使用情况，发现hugo生成速度最快，所以我最终也选择了该框架。
+下面简单说下搭建过程：
+windows 版本 ：  参考官方文档安装即可：
+ http://www.gohugo.org/doc/tutorials/installing-on-windows/
+ 安装完成之后，参考该文档生成页面：
+ http://www.gohugo.org/post/coderzh-hugo/
+文中说下载全部模板失败，我这通过一个小时都下载成功了，这样就可以随心所欲换模板了，看了下有1.9G左右，还是不小的。点击图中更新所有子模块，慢慢更新即可。
+   每个模板中都有一个默认的配置
+可以将themes\XXXX\exampleSite\config.toml 拷贝到 hugo新建站点的根目录下，然后在这个基础上修改，相对方便点。
+ 命令简要说明下  注意在站点目录下执行
+  hugo",
+    "inLanguage" : "en-us",
+    "author" : "luckylhb90",
+    "creator" : "luckylhb90",
+    "publisher": "luckylhb90",
+    "accountablePerson" : "luckylhb90",
+    "copyrightHolder" : "luckylhb90",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-02-16 22:15:36 &#43;0800 CST",
+    "dateModified" : "2019-02-16 22:15:36 &#43;0800 CST",
+    "url" : "https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/",
+    "wordCount" : "126",
+    "keywords" : [ "hugo", "luckylhb90"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://luckylhb90.github.io">luckylhb90</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://luckylhb90.github.io">luckylhb90</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">hugo 搭建github page</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://luckylhb90.github.io" rel="author">luckylhb90</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-02-16 itemprop="datePublished">February 16, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://luckylhb90.github.io/categories/hugo/"> hugo </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="hugo-搭建github-page">hugo 搭建github page</h1>
+
+<p>&emsp;&emsp;最近心血来潮，突然想继续写写博客，提高下写作文的水平（上学期间，作文就没写够过800字，尴尬啊）。</p>
+
+<p>&emsp;&emsp;然后最近就研究了下github page，google下，发现比较流行的三个静态页面生成框架，jekyll hexo hugo。
+简单做了下对比：</p>
+
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>语言</th>
+<th>性能</th>
+<th>模板</th>
+<th>搭建成本</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>jekyll</td>
+<td>ruby</td>
+<td>慢</td>
+<td>够用</td>
+<td>较简单</td>
+</tr>
+
+<tr>
+<td>hexo</td>
+<td>nodejs</td>
+<td>比较快</td>
+<td>够用</td>
+<td>麻烦</td>
+</tr>
+
+<tr>
+<td>hugo</td>
+<td>go</td>
+<td>快</td>
+<td>够用</td>
+<td>简单</td>
+</tr>
+</tbody>
+</table>
+
+<p>&emsp;&emsp;看了实现语言，自己目前多少了解一些go语法，其他两种语言个人了解不多，还有性能方面，看了大部分人的使用情况，发现hugo生成速度最快，所以我最终也选择了该框架。</p>
+
+<p>下面简单说下搭建过程：</p>
+
+<h4 id="windows-版本">windows 版本 ：</h4>
+
+<ol>
+<li><p>参考官方文档安装即可：</p>
+
+<blockquote>
+<p><a href="http://www.gohugo.org/doc/tutorials/installing-on-windows/" rel="nofollow noreferrer" target="_blank">http://www.gohugo.org/doc/tutorials/installing-on-windows/</a></p>
+</blockquote></li>
+
+<li><p>安装完成之后，参考该文档生成页面：</p>
+
+<blockquote>
+<p><a href="http://www.gohugo.org/post/coderzh-hugo/" rel="nofollow noreferrer" target="_blank">http://www.gohugo.org/post/coderzh-hugo/</a><br />
+文中说下载全部模板失败，我这通过一个小时都下载成功了，这样就可以随心所欲换模板了，看了下有1.9G左右，还是不小的。点击图中更新所有子模块，慢慢更新即可。</p>
+</blockquote></li>
+</ol>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/2/2-1.jpg" alt="2-1" class="lazyload"><figcaption class="image-caption">2-1</figcaption></figure></p>
+
+<blockquote>
+<p>每个模板中都有一个默认的配置<br />
+可以将themes\XXXX\exampleSite\config.toml 拷贝到 hugo新建站点的根目录下，然后在这个基础上修改，相对方便点。</p>
+</blockquote>
+
+<h4 id="命令简要说明下">命令简要说明下</h4>
+
+<blockquote>
+<p><strong>注意在站点目录下执行</strong></p>
+</blockquote>
+
+<ol>
+<li><p>hugo</p>
+
+<blockquote>
+<p>直接执行可以生成public目录，这个目录就是最终要上传到github仓库的。</p>
+</blockquote></li>
+
+<li><p>hugo server</p>
+
+<blockquote>
+<p>本地启动服务，可以浏览器直接访问<br />
+<em>后面还可添加一些参数</em><br />
+-t XXX(或者&ndash;theme=XXX)参数的意思是使用XXX主题渲染我们的页面<br />
+&ndash;buildDrafts参数设置为true，运行Hugo时要加上&ndash;buildDrafts参数才会生成被标记为草稿的页面<br />
+–watch或者-w  选项打开的话，将会监控到文章的改动从而自动去刷新浏览器(现在应该是默认开启的)</p>
+</blockquote></li>
+</ol>
+
+<h4 id="问题记录">问题记录</h4>
+
+<ol>
+<li><p>使用主题时，确保主题已下载到本地.</p>
+
+<blockquote>
+<p>第一次使用时，指定了一个主题，发现怎么启动都看不到页面，查了半天，发现themes这个主题的目录都是空的，ε(┬┬﹏┬┬)3。。。</p>
+</blockquote></li>
+
+<li><p>md文档头部的+++ 和 &mdash; 都可以使用。但是格式有略微不同。</p>
+
+<pre><code>+++
+draft = false
++++
+</code></pre>
+
+<pre><code>---
+draft : false
+---
+</code></pre></li>
+
+<li><p>hugo 的markdown语法貌似不太一样，所以参考了如下文档研究了下。</p>
+
+<blockquote>
+<p><a href="https://blog.pytool.com/language/golang/hugo/hugo_markdown/" rel="nofollow noreferrer" target="_blank">https://blog.pytool.com/language/golang/hugo/hugo_markdown/</a>
+<a href="http://blog.baiqp.info/theme-markdown-grammar/" rel="nofollow noreferrer" target="_blank">http://blog.baiqp.info/theme-markdown-grammar/</a></p>
+</blockquote></li>
+</ol>
+
+<h4 id="命令使用总结-win-linux混用-仅做参考记录">命令使用总结(win&amp;&amp;linux混用，仅做参考记录)</h4>
+
+<pre><code>cd D:\hugo
+mkdir bin
+mkdir sites
+cd bin &amp;&amp; wget https://github.com/spf13/hugo/releases/最新版本
+unzip hugo-XXXXXXX.zip
+set PATH=%PATH%;D:\hugo\bin
+hugo version
+cd D:\hugo\sites
+hugo new site example.com
+cd example.com
+hugo new about.md
+hugo new post/first.md
+git clone --recursive https://github.com/spf13/hugoThemes themes
+cp themes\XXXX\exampleSite\config.toml .\
+hugo
+hugo server
+
+</code></pre>
+
+<h4 id="参考">参考</h4>
+
+<blockquote>
+<p><a href="http://www.gohugo.org/doc/tutorials/installing-on-windows/" rel="nofollow noreferrer" target="_blank">http://www.gohugo.org/doc/tutorials/installing-on-windows/</a><br />
+<a href="http://www.gohugo.org/post/coderzh-hugo/" rel="nofollow noreferrer" target="_blank">http://www.gohugo.org/post/coderzh-hugo/</a><br />
+<a href="https://jimmysong.io/posts/building-github-pages-with-hugo/" rel="nofollow noreferrer" target="_blank">https://jimmysong.io/posts/building-github-pages-with-hugo/</a><br />
+<a href="https://blog.pytool.com/language/golang/hugo/hugo_markdown/" rel="nofollow noreferrer" target="_blank">https://blog.pytool.com/language/golang/hugo/hugo_markdown/</a><br />
+<a href="http://blog.baiqp.info/theme-markdown-grammar/" rel="nofollow noreferrer" target="_blank">http://blog.baiqp.info/theme-markdown-grammar/</a></p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>luckylhb90 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/>https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://luckylhb90.github.io/tags/hugo/">
+                    #hugo</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://luckylhb90.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://luckylhb90.github.io/2019/welcome/" class="prev" rel="prev" title="开篇瞎说"><i class="iconfont icon-left"></i>&nbsp;开篇瞎说</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://luckylhb90.github.io">luckylhb90</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
