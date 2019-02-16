@@ -6,13 +6,34 @@
     <description>Recent content in Posts on luckylhb90</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 00:50:10 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 16 Feb 2019 22:15:36 +0800</lastBuildDate>
     
 	<atom:link href="https://luckylhb90.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>First Post</title>
+      <title>hugo 搭建github page</title>
+      <link>https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/</link>
+      <pubDate>Sat, 16 Feb 2019 22:15:36 +0800</pubDate>
+      
+      <guid>https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/</guid>
+      <description>hugo 搭建github page &amp;emsp;&amp;emsp;最近心血来潮，突然想继续写写博客，提高下写作文的水平（上学期间，作文就没写够过800字，尴尬啊）。
+&amp;emsp;&amp;emsp;然后最近就研究了下github page，google下，发现比较流行的三个静态页面生成框架，jekyll hexo hugo。 简单做了下对比：
+   框架 语言 性能 模板 搭建成本     jekyll ruby 慢 够用 较简单   hexo nodejs 比较快 够用 麻烦   hugo go 快 够用 简单    &amp;emsp;&amp;emsp;看了实现语言，自己目前多少了解一些go语法，其他两种语言个人了解不多，还有性能方面，看了大部分人的使用情况，发现hugo生成速度最快，所以我最终也选择了该框架。
+下面简单说下搭建过程：
+windows 版本 ：  参考官方文档安装即可：
+ http://www.gohugo.org/doc/tutorials/installing-on-windows/
+ 安装完成之后，参考该文档生成页面：
+ http://www.gohugo.org/post/coderzh-hugo/
+文中说下载全部模板失败，我这通过一个小时都下载成功了，这样就可以随心所欲换模板了，看了下有1.9G左右，还是不小的。点击图中更新所有子模块，慢慢更新即可。
+   每个模板中都有一个默认的配置
+可以将themes\XXXX\exampleSite\config.toml 拷贝到 hugo新建站点的根目录下，然后在这个基础上修改，相对方便点。
+ 命令简要说明下  注意在站点目录下执行
+  hugo</description>
+    </item>
+    
+    <item>
+      <title>开篇瞎说</title>
       <link>https://luckylhb90.github.io/2019/welcome/</link>
       <pubDate>Sat, 16 Feb 2019 00:50:10 +0100</pubDate>
       
@@ -20,7 +41,7 @@
       <description> 博客-开篇 碎碎念 工作到现在，也好几年光景了，初入工作时，也在csdn写了一些文章，基本上都是一些比较初级的，现在看来，什么高并发，分布式，微服务，对于当时写的文章来说，真是太低级了。
 不过现在呢，可能还是一样，只是自娱自乐，找点乐子罢了。
 言归正传，一直想搭建一个个人博客，前两年搞了一个VPS，也买了域名，只是搭建了一个ssr，略微有点浪费，一直想干点别的用，比如整个wordpress，无奈，还是太懒了，现在呢，域名也过期了，暂时也不想续费了，wordpress也就搁置了。
-但是工作这么多年了，也积累了不少粗浅的经验，多少想写写，所以呢，看了看github pages，这个比较符合我目前的品味，所以研究了下，先从一个github pages搞起吧，大概从计划做，到现在完成，也间隔了一个月，拖沓，拖延症，懒癌患者真是不好啊，得改。
+但是工作这么多年了，也积累了不少粗浅的经验，多少想写写，所以呢，看了看github pages，这个比较符合我目前的品味，通过最近断断续续的研究，终于准备好好部署下了，也是拖沓了不少时间，拖延症，懒癌患者真是不好啊，得改。
 所以呢，之后也计划写写文章，吐吐槽啊，发发牢骚啥的，省的做个程序员，总是写代码，在把脑子写坏了，多可惜。
 Hello World! </description>
     </item>

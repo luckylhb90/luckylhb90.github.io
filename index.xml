@@ -6,11 +6,178 @@
     <description>Recent content in luckylhb90 on luckylhb90</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 00:50:10 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 16 Feb 2019 22:15:36 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>First Post</title>
+      <title>hugo 搭建github page</title>
+      <link>https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/</link>
+      <pubDate>Sat, 16 Feb 2019 22:15:36 +0800</pubDate>
+      
+      <guid>https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/</guid>
+      <description>
+
+&lt;h1 id=&#34;hugo-搭建github-page&#34;&gt;hugo 搭建github page&lt;/h1&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;最近心血来潮，突然想继续写写博客，提高下写作文的水平（上学期间，作文就没写够过800字，尴尬啊）。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;然后最近就研究了下github page，google下，发现比较流行的三个静态页面生成框架，jekyll hexo hugo。
+简单做了下对比：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;框架&lt;/th&gt;
+&lt;th&gt;语言&lt;/th&gt;
+&lt;th&gt;性能&lt;/th&gt;
+&lt;th&gt;模板&lt;/th&gt;
+&lt;th&gt;搭建成本&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;jekyll&lt;/td&gt;
+&lt;td&gt;ruby&lt;/td&gt;
+&lt;td&gt;慢&lt;/td&gt;
+&lt;td&gt;够用&lt;/td&gt;
+&lt;td&gt;较简单&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;hexo&lt;/td&gt;
+&lt;td&gt;nodejs&lt;/td&gt;
+&lt;td&gt;比较快&lt;/td&gt;
+&lt;td&gt;够用&lt;/td&gt;
+&lt;td&gt;麻烦&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;hugo&lt;/td&gt;
+&lt;td&gt;go&lt;/td&gt;
+&lt;td&gt;快&lt;/td&gt;
+&lt;td&gt;够用&lt;/td&gt;
+&lt;td&gt;简单&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;看了实现语言，自己目前多少了解一些go语法，其他两种语言个人了解不多，还有性能方面，看了大部分人的使用情况，发现hugo生成速度最快，所以我最终也选择了该框架。&lt;/p&gt;
+
+&lt;p&gt;下面简单说下搭建过程：&lt;/p&gt;
+
+&lt;h4 id=&#34;windows-版本&#34;&gt;windows 版本 ：&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;参考官方文档安装即可：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.gohugo.org/doc/tutorials/installing-on-windows/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.gohugo.org/doc/tutorials/installing-on-windows/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装完成之后，参考该文档生成页面：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.gohugo.org/post/coderzh-hugo/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.gohugo.org/post/coderzh-hugo/&lt;/a&gt;&lt;br /&gt;
+文中说下载全部模板失败，我这通过一个小时都下载成功了，这样就可以随心所欲换模板了，看了下有1.9G左右，还是不小的。点击图中更新所有子模块，慢慢更新即可。&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://luckylhb90.github.io/images/2/2-1.jpg&#34; alt=&#34;2-1&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;每个模板中都有一个默认的配置&lt;br /&gt;
+可以将themes\XXXX\exampleSite\config.toml 拷贝到 hugo新建站点的根目录下，然后在这个基础上修改，相对方便点。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;命令简要说明下&#34;&gt;命令简要说明下&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意在站点目录下执行&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;hugo&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;直接执行可以生成public目录，这个目录就是最终要上传到github仓库的。&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;hugo server&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;本地启动服务，可以浏览器直接访问&lt;br /&gt;
+&lt;em&gt;后面还可添加一些参数&lt;/em&gt;&lt;br /&gt;
+-t XXX(或者&amp;ndash;theme=XXX)参数的意思是使用XXX主题渲染我们的页面&lt;br /&gt;
+&amp;ndash;buildDrafts参数设置为true，运行Hugo时要加上&amp;ndash;buildDrafts参数才会生成被标记为草稿的页面&lt;br /&gt;
+–watch或者-w  选项打开的话，将会监控到文章的改动从而自动去刷新浏览器(现在应该是默认开启的)&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;问题记录&#34;&gt;问题记录&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用主题时，确保主题已下载到本地.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;第一次使用时，指定了一个主题，发现怎么启动都看不到页面，查了半天，发现themes这个主题的目录都是空的，ε(┬┬﹏┬┬)3。。。&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;md文档头部的+++ 和 &amp;mdash; 都可以使用。但是格式有略微不同。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+draft = false
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+draft : false
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;hugo 的markdown语法貌似不太一样，所以参考了如下文档研究了下。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.pytool.com/language/golang/hugo/hugo_markdown/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.pytool.com/language/golang/hugo/hugo_markdown/&lt;/a&gt;
+&lt;a href=&#34;http://blog.baiqp.info/theme-markdown-grammar/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.baiqp.info/theme-markdown-grammar/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;命令使用总结-win-linux混用-仅做参考记录&#34;&gt;命令使用总结(win&amp;amp;&amp;amp;linux混用，仅做参考记录)&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;cd D:\hugo
+mkdir bin
+mkdir sites
+cd bin &amp;amp;&amp;amp; wget https://github.com/spf13/hugo/releases/最新版本
+unzip hugo-XXXXXXX.zip
+set PATH=%PATH%;D:\hugo\bin
+hugo version
+cd D:\hugo\sites
+hugo new site example.com
+cd example.com
+hugo new about.md
+hugo new post/first.md
+git clone --recursive https://github.com/spf13/hugoThemes themes
+cp themes\XXXX\exampleSite\config.toml .\
+hugo
+hugo server
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;参考&#34;&gt;参考&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.gohugo.org/doc/tutorials/installing-on-windows/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.gohugo.org/doc/tutorials/installing-on-windows/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.gohugo.org/post/coderzh-hugo/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.gohugo.org/post/coderzh-hugo/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://jimmysong.io/posts/building-github-pages-with-hugo/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://jimmysong.io/posts/building-github-pages-with-hugo/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://blog.pytool.com/language/golang/hugo/hugo_markdown/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.pytool.com/language/golang/hugo/hugo_markdown/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://blog.baiqp.info/theme-markdown-grammar/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.baiqp.info/theme-markdown-grammar/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>开篇瞎说</title>
       <link>https://luckylhb90.github.io/2019/welcome/</link>
       <pubDate>Sat, 16 Feb 2019 00:50:10 +0100</pubDate>
       
@@ -27,7 +194,7 @@
 
 &lt;p&gt;言归正传，一直想搭建一个个人博客，前两年搞了一个VPS，也买了域名，只是搭建了一个ssr，略微有点浪费，一直想干点别的用，比如整个wordpress，无奈，还是太懒了，现在呢，域名也过期了，暂时也不想续费了，wordpress也就搁置了。&lt;/p&gt;
 
-&lt;p&gt;但是工作这么多年了，也积累了不少粗浅的经验，多少想写写，所以呢，看了看github pages，这个比较符合我目前的品味，所以研究了下，先从一个github pages搞起吧，大概从计划做，到现在完成，也间隔了一个月，拖沓，拖延症，懒癌患者真是不好啊，得改。&lt;/p&gt;
+&lt;p&gt;但是工作这么多年了，也积累了不少粗浅的经验，多少想写写，所以呢，看了看github pages，这个比较符合我目前的品味，通过最近断断续续的研究，终于准备好好部署下了，也是拖沓了不少时间，拖延症，懒癌患者真是不好啊，得改。&lt;/p&gt;
 
 &lt;p&gt;所以呢，之后也计划写写文章，吐吐槽啊，发发牢骚啥的，省的做个程序员，总是写代码，在把脑子写坏了，多可惜。&lt;/p&gt;
 
@@ -46,8 +213,7 @@
 &lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;SanShao90&lt;/li&gt;
-&lt;li&gt;SanShao90@gmail.com&lt;/li&gt;
+&lt;li&gt;复制、粘贴搬运工&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
