@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on luckylhb90</title>
+    <link>https://luckylhb90.github.io/posts/</link>
+    <description>Recent content in Posts on luckylhb90</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Feb 2019 00:50:10 +0100</lastBuildDate>
+    
+	<atom:link href="https://luckylhb90.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Post</title>
+      <link>https://luckylhb90.github.io/2019/welcome/</link>
+      <pubDate>Sat, 16 Feb 2019 00:50:10 +0100</pubDate>
+      
+      <guid>https://luckylhb90.github.io/2019/welcome/</guid>
+      <description> 博客-开篇 碎碎念 工作到现在，也好几年光景了，初入工作时，也在csdn写了一些文章，基本上都是一些比较初级的，现在看来，什么高并发，分布式，微服务，对于当时写的文章来说，真是太低级了。
+不过现在呢，可能还是一样，只是自娱自乐，找点乐子罢了。
+言归正传，一直想搭建一个个人博客，前两年搞了一个VPS，也买了域名，只是搭建了一个ssr，略微有点浪费，一直想干点别的用，比如整个wordpress，无奈，还是太懒了，现在呢，域名也过期了，暂时也不想续费了，wordpress也就搁置了。
+但是工作这么多年了，也积累了不少粗浅的经验，多少想写写，所以呢，看了看github pages，这个比较符合我目前的品味，所以研究了下，先从一个github pages搞起吧，大概从计划做，到现在完成，也间隔了一个月，拖沓，拖延症，懒癌患者真是不好啊，得改。
+所以呢，之后也计划写写文章，吐吐槽啊，发发牢骚啥的，省的做个程序员，总是写代码，在把脑子写坏了，多可惜。
+Hello World! </description>
+    </item>
+    
+  </channel>
+</rss>
