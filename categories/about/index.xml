@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github-pages on luckylhb90</title>
-    <link>https://luckylhb90.github.io/categories/github-pages/</link>
-    <description>Recent content in github-pages on luckylhb90</description>
+    <title>about on luckylhb90</title>
+    <link>https://luckylhb90.github.io/categories/about/</link>
+    <description>Recent content in about on luckylhb90</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Feb 2015 18:19:54 +0800</lastBuildDate>
     
-	<atom:link href="https://luckylhb90.github.io/categories/github-pages/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://luckylhb90.github.io/categories/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 01 Feb 2015 18:19:54 +0800</pubDate>
       
       <guid>https://luckylhb90.github.io/about/</guid>
-      <description> About me  复制、粘贴搬运工  </description>
+      <description>About me 复制、粘贴搬运工</description>
     </item>
     
   </channel>

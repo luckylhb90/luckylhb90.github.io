@@ -6,15 +6,155 @@
     <description>Recent content in luckylhb90 on luckylhb90</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 22:15:36 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 23:00:36 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>hugo 搭建github page</title>
-      <link>https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/</link>
+      <title>4-hugo完善LeaveIt小功能</title>
+      <link>https://luckylhb90.github.io/post/4-hugo%E5%AE%8C%E5%96%84leaveit%E5%B0%8F%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sun, 17 Feb 2019 23:00:36 +0800</pubDate>
+      
+      <guid>https://luckylhb90.github.io/post/4-hugo%E5%AE%8C%E5%96%84leaveit%E5%B0%8F%E5%8A%9F%E8%83%BD/</guid>
+      <description>
+
+&lt;h1 id=&#34;4-hugo完善leaveit小功能&#34;&gt;4-hugo完善LeaveIt小功能&lt;/h1&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;通过前两篇文章介绍，博客功能基本上已经够用了，但是在看了不少博客后，发现，还有一些小功能很有意思，下面就简单配置下。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;如下操作都是基于LeaveIt主题进行的&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;添加字数统计&lt;/p&gt;
+
+&lt;p&gt;1.1 打开文件 themes\LeaveIt\layouts_default\single.html，在 22 行后插入一行 DOM：(.WordCount这行)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;span class=&amp;quot;post-category&amp;quot;&amp;gt;
+                        {{ range . }}
+                        {{- $name := . -}}
+                        {{- with $.Site.GetPage &amp;quot;taxonomy&amp;quot; (printf &amp;quot;categories/%s&amp;quot; $name) | default ($.Site.GetPage &amp;quot;taxonomy&amp;quot; (printf &amp;quot;categories/%s&amp;quot; ($name | urlize))) -}}
+                          &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt; {{ $name }} &amp;lt;/a&amp;gt;
+                        {{ end -}}
+                        {{ end }}
+                &amp;lt;/span&amp;gt;
+                {{- end }}
+                &amp;lt;span class=&amp;quot;post-word-count&amp;quot;&amp;gt;, {{ .WordCount }} words&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加修改时间&lt;/p&gt;
+
+&lt;p&gt;2.1每篇文件头添加一行修改时间 :lastmod&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;date: 2019-02-17T23:00:36+08:00
+lastmod: 2019-02-17T23:00:36+08:00
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.2 打开文件 themes\LeaveIt\layouts_default\single.html，在创建时间的代码后，加上如下DOM:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;    &amp;lt;span class=&amp;quot;post-time&amp;quot;&amp;gt;
+                updateAt &amp;lt;time datetime={{ dateFormat &amp;quot;Jan 2, 2006&amp;quot; .Lastmod }} itemprop=&amp;quot;datePublished&amp;quot;&amp;gt;{{ dateFormat &amp;quot;Jan 2, 2006&amp;quot; .Lastmod }}&amp;lt;/time&amp;gt;
+                &amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;之后再发现一些小功能-在补充哈&#34;&gt;之后再发现一些小功能，在补充哈&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>3-hugo添加评论功能</title>
+      <link>https://luckylhb90.github.io/post/3-hugo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sun, 17 Feb 2019 10:29:36 +0800</pubDate>
+      
+      <guid>https://luckylhb90.github.io/post/3-hugo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</guid>
+      <description>
+
+&lt;h1 id=&#34;hugo添加评论功能&#34;&gt;hugo添加评论功能&lt;/h1&gt;
+
+&lt;p&gt;上篇文章，搭建好了基础的github pages，现在基本可以正常使用了，剩下的就是修修补补，添加下可用插件了，目前考虑先整合个评论插件，通过google，发现现使用较多有disqus Gitment valine gittalk。其他评论插件可参考下文连接，总结的相当多，真是牛逼啊。
+&amp;gt; &lt;a href=&#34;https://blog.shuiba.co/comment-systems-recommendation&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.shuiba.co/comment-systems-recommendation&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;disqus 说是需要翻墙才可使用&lt;br /&gt;
+Gitment 可能存在安全问题&lt;br /&gt;
+gittalk 和gitment差不多&lt;br /&gt;
+valine 貌似也不错，之后考虑加上&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;综上分析，最后我选择了utterances，发现这个配置真心简单啊。。。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;参考了该博文，&lt;a href=&#34;https://mogeko.github.io/2018/025/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://mogeko.github.io/2018/025/&lt;/a&gt;&lt;br /&gt;
+虽然文中用的是gittalk，但是方法基本一样。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;huho配置utterances&#34;&gt;huho配置utterances&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;如下操作都是基于LeaveIt主题进行的&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;打开themes\LeaveIt\layouts_default\single.html&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;修改post-comment为如下代码，主要是!&amp;ndash; Comments &amp;ndash;下面这行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;post-comment&amp;quot;&amp;gt;
+      {{ if ( .Params.showComments | default true ) }}
+             {{ if ne .Site.DisqusShortname &amp;quot;&amp;quot; }}
+                 {{ template &amp;quot;_internal/disqus.html&amp;quot; . }}
+             {{ end }}
+      {{ end }}
+      &amp;lt;!-- Comments --&amp;gt;
+      {{ partial &amp;quot;comments.html&amp;quot; . }}
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;然后在themes\LeaveIt\layouts\partials下建立一个comments.html文件，填入如下代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!-- utterances --&amp;gt;
+{{- if .Site.Params.utterances.owner}}
+&amp;lt;div class=&amp;quot;post bg-white&amp;quot;&amp;gt;
+    &amp;lt;script src=&amp;quot;https://utteranc.es/client.js&amp;quot;
+          repo=&amp;quot;{{ .Site.Params.utterances.owner }}/{{ .Site.Params.utterances.repo }}&amp;quot;
+          issue-term=&amp;quot;{{ .Site.Params.utterances.issueTerm }}&amp;quot;
+          theme=&amp;quot;{{ .Site.Params.utterances.theme }}&amp;quot;
+          crossorigin=&amp;quot;anonymous&amp;quot;
+          async&amp;gt;
+    &amp;lt;/script&amp;gt;
+    &amp;lt;noscript&amp;gt;Please enable JavaScript to view the &amp;lt;a href=&amp;quot;https://github.com/utterance&amp;quot;&amp;gt;comments powered by utterances.&amp;lt;/a&amp;gt;&amp;lt;/noscript&amp;gt;
+&amp;lt;/div&amp;gt;
+{{- end }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;配置 config.toml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;[params.utterances]         # utteranc is a comment system based on GitHub issues. see https://utteranc.es
+owner = &amp;quot;xxxx&amp;quot; # github用户名
+repo = &amp;quot;yyyy&amp;quot;    # 仓库地址The repo to store comments
+issueTerm = &amp;quot;pathname&amp;quot;  
+theme = &amp;quot;github-light&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;github建立一个上文配置的仓库地址即可&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.shuiba.co/comment-systems-recommendation&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.shuiba.co/comment-systems-recommendation&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://mogeko.github.io/2018/025/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://mogeko.github.io/2018/025/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2-hugo搭建github-pages</title>
+      <link>https://luckylhb90.github.io/post/2-hugo%E6%90%AD%E5%BB%BAgithub-pages/</link>
       <pubDate>Sat, 16 Feb 2019 22:15:36 +0800</pubDate>
       
-      <guid>https://luckylhb90.github.io/2019/hugo%E6%90%AD%E5%BB%BAgithub-pages/</guid>
+      <guid>https://luckylhb90.github.io/post/2-hugo%E6%90%AD%E5%BB%BAgithub-pages/</guid>
       <description>
 
 &lt;h1 id=&#34;hugo-搭建github-page&#34;&gt;hugo 搭建github page&lt;/h1&gt;
@@ -180,20 +320,22 @@ git push -u origin master
 &lt;a href=&#34;https://jimmysong.io/posts/building-github-pages-with-hugo/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://jimmysong.io/posts/building-github-pages-with-hugo/&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&#34;https://blog.pytool.com/language/golang/hugo/hugo_markdown/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.pytool.com/language/golang/hugo/hugo_markdown/&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&#34;http://blog.baiqp.info/theme-markdown-grammar/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.baiqp.info/theme-markdown-grammar/&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://zhuanlan.zhihu.com/p/37752930&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/37752930&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/37752930&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/37752930&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://jimmysong.io/hugo-handbook/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://jimmysong.io/hugo-handbook/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://www.staticgen.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.staticgen.com/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
     </item>
     
     <item>
-      <title>开篇瞎说</title>
-      <link>https://luckylhb90.github.io/2019/welcome/</link>
+      <title>1-开博之作</title>
+      <link>https://luckylhb90.github.io/post/1-%E5%BC%80%E5%8D%9A%E4%B9%8B%E4%BD%9C/</link>
       <pubDate>Sat, 16 Feb 2019 00:50:10 +0100</pubDate>
       
-      <guid>https://luckylhb90.github.io/2019/welcome/</guid>
+      <guid>https://luckylhb90.github.io/post/1-%E5%BC%80%E5%8D%9A%E4%B9%8B%E4%BD%9C/</guid>
       <description>
 
-&lt;h1 id=&#34;博客-开篇&#34;&gt;博客-开篇&lt;/h1&gt;
+&lt;h1 id=&#34;开博之作&#34;&gt;开博之作&lt;/h1&gt;
 
 &lt;h2 id=&#34;碎碎念&#34;&gt;碎碎念&lt;/h2&gt;
 
